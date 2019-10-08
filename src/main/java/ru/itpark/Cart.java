@@ -21,37 +21,30 @@ public class Cart {
     }
 
     public void add(Goods goods) {
-        if (goods instanceof Lego) {
-            Lego lego = (Lego) goods;
-
-            if (!cartForGoods.containsKey(lego)) {
-                cartForGoods.put(lego, 1);
+            if (!cartForGoods.containsKey(goods)) {
+                cartForGoods.put(goods, 1);
             } else {
-                cartForGoods.merge(lego, 1, Integer::sum);
+                cartForGoods.merge(goods, 1, Integer::sum);
             }
 
-            amount += lego.getPrice();
-            amountIncludingDiscounts += lego.getPriceIncludingDiscount();
+            amount += goods.getPrice();
+            amountIncludingDiscounts += goods.getPriceIncludingDiscount();
             numberOfGoods++;
-        }
     }
 
     public void remove(Goods goods) {
-        if (goods instanceof Lego) {
-            Lego lego = (Lego) goods;
-            if (cartForGoods.containsKey(lego)) {
-                int quantity = cartForGoods.get(lego) - 1;
+            if (cartForGoods.containsKey(goods)) {
+                int quantity = cartForGoods.get(goods) - 1;
                 // Удаляю каждый раз и создаю c новым значением, так как не знаю как убавлять значение в HashMap'e, как сделал это с увелечением значения в методе add();
-                cartForGoods.remove(lego);
+                cartForGoods.remove(goods);
                 if (quantity != 0) {
-                    cartForGoods.put(lego, quantity);
+                    cartForGoods.put(goods, quantity);
                 }
 
-                amount -= lego.getPrice();
-                amountIncludingDiscounts -= lego.getPriceIncludingDiscount();
+                amount -= goods.getPrice();
+                amountIncludingDiscounts -= goods.getPriceIncludingDiscount();
                 numberOfGoods--;
             }
-        }
     }
 
     @Override
