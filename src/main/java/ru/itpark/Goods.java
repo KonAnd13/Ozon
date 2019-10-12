@@ -1,7 +1,7 @@
 package ru.itpark;
 
 public abstract class Goods {
-    private String URL;
+    private String url;
     private String imageUrl;
     private String name;
     private int productCode;
