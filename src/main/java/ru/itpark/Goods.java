@@ -1,6 +1,7 @@
 package ru.itpark;
 
 public abstract class Good {
+    private int id;
     private String url;
     private String imageUrl;
     private String name;
