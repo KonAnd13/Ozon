@@ -9,6 +9,7 @@ class CartTest {
     @Test
     void createCart() {
         Lego lego_1 = new Lego(
+                143327311,
                 "https://www.ozon.ru/context/detail/id/143327311/",
                 "https://cdn1.ozone.ru/multimedia/c1200/1021657753.JPG",
                 "LEGO City Great Vehicles Дом на колесах Конструктор",
@@ -25,6 +26,7 @@ class CartTest {
         );
 
         Lego lego_2 = new Lego(
+                154342351,
                 "https://www.ozon.ru/context/detail/id/154342351/",
                 "https://cdn1.ozone.ru/multimedia/c1200/1037592368.jpg",
                 "LEGO Hidden Side Трюковый грузовик Эль-Фуэго Конструктор",
@@ -41,6 +43,7 @@ class CartTest {
         );
 
         Lego lego_3 = new Lego(
+                154342355,
                 "https://www.ozon.ru/context/detail/id/154342355/",
                 "https://cdn1.ozone.ru/multimedia/c1200/1037592160.jpg",
                 "LEGO Hidden Side Школа с привидениями Ньюбери Конструктор",
