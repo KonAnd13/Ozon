@@ -35,9 +35,10 @@ public class Cart {
     public void remove(Goods goods) {
             if (cartForGoods.containsKey(goods)) {
                 int quantity = cartForGoods.get(goods) - 1;
-                // Удаляю каждый раз и создаю c новым значением, так как не знаю как убавлять значение в HashMap'e, как сделал это с увелечением значения в методе add();
-                cartForGoods.remove(goods);
-                if (quantity != 0) {
+               
+                if (quantity == 0) {
+                    cartForGoods.remove(goods);
+                } else {
                     cartForGoods.put(goods, quantity);
                 }
 
