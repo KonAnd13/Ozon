@@ -14,7 +14,8 @@ public abstract class Good {
     private int reviews;
     private int amountOfElements;
 
-    public Goods(String URL, String imageUrl, String name, int productCode, int price, double discount, String popularity, int rating, int reviews, int amountOfElements) {
+    public Goods(int id, String URL, String imageUrl, String name, int productCode, int price, double discount, String popularity, int rating, int reviews, int amountOfElements) {
+        this.id = id;
         this.URL = URL;
         this.imageUrl = imageUrl;
         this.name = name;
