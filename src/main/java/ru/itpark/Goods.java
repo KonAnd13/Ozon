@@ -1,6 +1,6 @@
 package ru.itpark;
 
-public abstract class Goods {
+public abstract class Good {
     private String url;
     private String imageUrl;
     private String name;
