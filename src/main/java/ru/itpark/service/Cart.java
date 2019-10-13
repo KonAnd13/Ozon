@@ -1,9 +1,10 @@
-package ru.itpark;
+package ru.itpark.service;
 
+import ru.itpark.model.Good;
 import java.util.*;
 
 public class Cart {
-    private Map<Goods, Integer> cartForGoods = new HashMap<>();
+    private Map<Good, Integer> cartForGoods = new HashMap<>();
     private int amount;
     private int amountIncludingDiscounts;
     private int numberOfGoods;
@@ -20,30 +21,30 @@ public class Cart {
         return numberOfGoods;
     }
 
-    public void add(Goods goods) {
-            if (!cartForGoods.containsKey(goods)) {
-                cartForGoods.put(goods, 1);
+    public void add(Good good) {
+            if (!cartForGoods.containsKey(good)) {
+                cartForGoods.put(good, 1);
             } else {
-                cartForGoods.merge(goods, 1, Integer::sum);
+                cartForGoods.merge(good, 1, Integer::sum);
             }
 
-            amount += goods.getPrice();
-            amountIncludingDiscounts += goods.getPriceIncludingDiscount();
+            amount += good.getPrice();
+            amountIncludingDiscounts += good.getPriceIncludingDiscount();
             numberOfGoods++;
     }
 
-    public void remove(Goods goods) {
-            if (cartForGoods.containsKey(goods)) {
-                int quantity = cartForGoods.get(goods) - 1;
+    public void remove(Good good) {
+            if (cartForGoods.containsKey(good)) {
+                int quantity = cartForGoods.get(good) - 1;
                
                 if (quantity == 0) {
-                    cartForGoods.remove(goods);
+                    cartForGoods.remove(good);
                 } else {
-                    cartForGoods.put(goods, quantity);
+                    cartForGoods.put(good, quantity);
                 }
 
-                amount -= goods.getPrice();
-                amountIncludingDiscounts -= goods.getPriceIncludingDiscount();
+                amount -= good.getPrice();
+                amountIncludingDiscounts -= good.getPriceIncludingDiscount();
                 numberOfGoods--;
             }
     }

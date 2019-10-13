@@ -1,5 +1,8 @@
 package ru.itpark;
 
+import ru.itpark.model.Lego;
+import ru.itpark.service.Cart;
+
 public class Main {
     public static void main(String[] args) {
         Lego lego_1 = new Lego(

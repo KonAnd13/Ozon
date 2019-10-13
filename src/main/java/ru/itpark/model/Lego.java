@@ -1,6 +1,6 @@
-package ru.itpark;
+package ru.itpark.model;
 
-public class Lego extends Goods {
+public class Lego extends Good {
     private String type;
     private String series;
     private int childAge;

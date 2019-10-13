@@ -1,6 +1,8 @@
 package ru.itpark;
 
 import org.junit.jupiter.api.Test;
+import ru.itpark.model.Lego;
+import ru.itpark.service.Cart;
 
 import static org.junit.jupiter.api.Assertions.*;
 
